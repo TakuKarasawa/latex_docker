@@ -1,0 +1,25 @@
+{
+  "name": "latex-ja-dev",
+  // Paperist さんの日本語 LaTeX コンテナ
+  // 再現性を高めるなら、latest よりバージョンタグを指定するのがおすすめです。
+  // 例: "ghcr.io/paperist/texlive-ja:2024-debian"
+  "image": "ghcr.io/paperist/texlive-ja:latest",
+
+  // コンテナ内で使うユーザ
+  "remoteUser": "root",
+
+  // VS Code 側のカスタマイズ
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop"
+      ],
+      "settings": {
+        // 保存時に自動ビルド
+        "latex-workshop.latex.autoBuild.run": "onSave",
+        // VS Code のタブで PDF を開く
+        "latex-workshop.view.pdf.viewer": "tab"
+      }
+    }
+  }
+}
